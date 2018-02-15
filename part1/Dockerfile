@@ -1,6 +1,6 @@
 # Comments are made with the pound sign
 
 FROM  ubuntu:14.04   
-COPY  ./myscript.sh   /myscript.sh
-RUN   chmod +x /myscript.sh
-CMD   bash /myscript.sh
+COPY  ./myscript.sh   /pyramid.sh
+RUN   chmod +x /pyramid.sh
+CMD   bash /pyramid.sh
