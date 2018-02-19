@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+
+  book-api:
+    build:
+      context: ./book-api
+    ports:
+      - 5001:5000
+    volumes:
+      - ./book-api/src:/app
+    
+  front-end:
+    build:
+      context: ./front-end
+    environment:
+      - BOOK_API_SERVER=http://book-api:5000
+    ports:
+      - 5000:5000
+    volumes:
+      - ./front-end/src:/app
+      
+  book-database:
+    image: mongo:latest
+    ports:
+       - 27017:27017

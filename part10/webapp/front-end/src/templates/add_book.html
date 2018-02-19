@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">  
+  </head>
+
+  <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="display-4 mb-4 mt-4">Create Book</h1>
+
+                    <form action="{{url_for('add_book')}}" method="post">
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" class="form-control" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" class="form-control" id="author">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+
+    <!-- JS Bootstrap Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>  
+  </body>
+</html>
