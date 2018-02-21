@@ -1,9 +1,6 @@
 import requests 
 import os
-from flask import Flask
-from flask import render_template
-from flask import request
-from flask import jsonify
+from flask import Flask, render_template, request, jsonify
 
 BOOK_API_SERVER = os.environ['BOOK_API_SERVER']
 app = Flask(__name__)
@@ -18,16 +15,14 @@ def show_books():
 def add_book():
     if request.method == 'GET':
         return render_template('add_book.html')
-
-    json = {
-            'title': request.form.get('title'),
-            'author': request.form.get('author')
-    }
-
-    response = requests.post(BOOK_API_SERVER + "/create_book", json=json)
-    
-    if response.status_code == 200:
-        return show_books()
+    else:
+        json = {
+            'title': request.form['title'],
+            'author': request.form['author']
+        }
+        response = requests.post(BOOK_API_SERVER + "/create_book", json=json)
+        if response.status_code == 200:
+            return show_books()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
