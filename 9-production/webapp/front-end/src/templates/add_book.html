@@ -8,29 +8,25 @@
   </head>
 
   <body>
-      
-    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="display-4 mb-4 mt-4">Create Book</h1>
 
-        <h1 class="display-4 mb-4 mt-4">Books</h1>
-        
-        <table class='table'>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                </tr>
-            </thead>
-            <tbody>
-                    {% for book in books %}
-                    <tr>
-                            <td>{{book.title}}</td>
-                            <td>{{book.author}}</td>
-                    </tr>
-                    {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
+                    <form action="{{url_for('add_book')}}" method="post">
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" class="form-control" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="author">Author:</label>
+                            <input type="text" name="author" class="form-control" id="author">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
 
     <!-- JS Bootstrap Dependencies -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

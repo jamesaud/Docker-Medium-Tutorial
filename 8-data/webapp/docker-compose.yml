@@ -5,6 +5,8 @@ services:
   book-api:
     build:
       context: ./book-api
+    environment:
+       - DATABASE_URL=book-database:27017
     ports:
       - 5001:5000
     volumes:
@@ -19,7 +21,7 @@ services:
       - 5000:5000
     volumes:
       - ./front-end/src:/app
-      
+    
   book-database:
     image: mongo:latest
     ports:

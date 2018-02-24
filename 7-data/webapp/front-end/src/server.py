@@ -1,7 +1,5 @@
-import requests 
-import os
-from flask import Flask
-from flask import render_template
+import requests, os
+from flask import Flask, render_template
 
 BOOK_API_SERVER = os.environ['BOOK_API_SERVER']
 app = Flask(__name__)
