@@ -1,13 +1,16 @@
-import sys
+import sys, os
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
 from bson.json_util import dumps
+
+# Env vars
+DATABASE_URL = os.environ['DATABASE_URL']
 
 # App 
 app = Flask(__name__)
 
 # Database Settings
-CLIENT = MongoClient('mongodb://book-database:27017/')
+CLIENT = MongoClient('mongodb://' + DATABASE_URL)
 DB = CLIENT.book_database
 
 # Database helper functions

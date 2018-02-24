@@ -6,13 +6,15 @@ services:
     image: jamesaudretsch/webapp_book-api
     ports:
       - 5001:5000
+    environment:
+      - DATABASE_URL=book-database:27017
     depends_on:
       - book-database
     
   front-end:
     image: jamesaudretsch/webapp_front-end
     environment:
-      - BOOK_API_SERVER=http://webapp-stack_book-api:5000
+      - BOOK_API_SERVER=http://book-api:5000
     ports:
       - 5000:5000
     depends_on:
